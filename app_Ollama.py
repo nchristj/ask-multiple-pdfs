@@ -16,12 +16,12 @@ def handle_userinput(user_question):
             st.write(user_template.replace(
                 "{{MSG}}", message['user']), unsafe_allow_html=True)
         else:
-            if(type(message['bot']) == 'str'):
+            if isinstance(message['bot'], str):
                 st.write(bot_template.replace(
                     "{{MSG}}", message['bot']), unsafe_allow_html=True)
             else:
                 st.write(bot_template.replace(
-                    "{{MSG}}", "We will intimate to our tech support about your query!!! INC will be shared to you in mail"), unsafe_allow_html=True)
+                    "{{MSG}}", "Tech support initiated for your query!! INC will be shared!!!"), unsafe_allow_html=True)
 
 
 def main():
