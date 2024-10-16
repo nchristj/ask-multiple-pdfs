@@ -63,7 +63,8 @@ def get_vectorstore(text_chunks):
 
 def retrieve_context(input_query):
     embeddings = OllamaEmbeddings(model="mistral",
-                                  base_url='https://chatdocsllm-nchristj-dev.apps.sandbox-m2.ll9k.p1.openshiftapps.com/codeserver/proxy/11434')
+                                  base_url='http://127.0.0.1:11434')
+    print(type(embeddings))
     vectorstore_ = FAISS.load_local("FAISS_", embeddings, allow_dangerous_deserialization=True)
     results = vectorstore_.similarity_search_with_score(input_query, k=5)
     context_text = "\n\n---\n\n".join([doc.page_content for doc, _score in results])
