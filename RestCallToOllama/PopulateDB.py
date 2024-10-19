@@ -10,8 +10,8 @@ from get_embedding_function import get_embedding_function
 from langchain_chroma import Chroma
 
 
-CHROMA_PATH = "mistraldb"
-DATA_PATH = "data"
+CHROMA_PATH = "mistraldb_newfr"
+DATA_PATH = "FR_DATA"
 
 
 

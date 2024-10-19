@@ -103,3 +103,4 @@ if __name__ == '__main__':
     embeddings = OllamaEmbeddings(model="mistral")
     vectordb = FAISS.load_local(folder_path="FAISS_",embeddings=embeddings,allow_dangerous_deserialization=True)
     main(vectordb)
+    model = FAISS.from_embeddings()
